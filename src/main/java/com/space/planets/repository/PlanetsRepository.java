@@ -1,16 +1,23 @@
 package com.space.planets.repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
 
 @Repository
 public class PlanetsRepository {
 
-    // this class will be used to connect to a postgreasql database
+    Properties properties;
 
     public PlanetsRepository() {
-        // TODO Auto-generated constructor stub
+         this.properties = ConfigLoader.loadConfig();
     }
 
-
+    public void getAllPlanets() {
+        System.out.println("getting all planets");
+    }
 
 }
